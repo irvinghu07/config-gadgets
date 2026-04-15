@@ -17,12 +17,6 @@ keymap("n", "<leader>q", ":q<CR>", {desc = "Quit", silent = true})
 -- Oil file explorer
 keymap("n", "-", "<CMD>Oil<CR>", {desc = "Open parent directory"})
 
--- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", {desc = "Find files"})
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", {desc = "Live grep"})
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {desc = "Find buffers"})
-keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", {desc = "Help tags"})
-
 -- LSP keymaps
 keymap("n", "gd", vim.lsp.buf.definition, {desc = "Go to definition"})
 keymap("n", "gr", vim.lsp.buf.references, {desc = "Go to references"})
@@ -33,3 +27,23 @@ keymap("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "Code action"})
 keymap("n", "<leader>e", vim.diagnostic.open_float, {desc = "Show diagnostics"})
 keymap("n", "[d", vim.diagnostic.goto_prev, {desc = "Previous diagnostic"})
 keymap("n", "]d", vim.diagnostic.goto_next, {desc = "Next diagnostic"})
+
+-- Buffer navigation (bufferline)
+keymap("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", {desc = "Prev buffer"})
+keymap("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", {desc = "Next buffer"})
+keymap("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", {desc = "Pin buffer"})
+keymap("n", "<leader>bd", "<cmd>bd<cr>", {desc = "Close buffer"})
+keymap("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>",
+       {desc = "Close unpinned"})
+
+-- TODO navigation
+keymap("n", "]t", function() require("todo-comments").jump_next() end,
+       {desc = "Next TODO"})
+keymap("n", "[t", function() require("todo-comments").jump_prev() end,
+       {desc = "Prev TODO"})
+keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", {desc = "Find TODOs"})
+
+-- Noice
+keymap("n", "<leader>nd", "<cmd>NoiceDismiss<cr>",
+       {desc = "Dismiss notifications"})
+keymap("n", "<leader>nh", "<cmd>NoiceHistory<cr>", {desc = "Message history"})

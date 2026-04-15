@@ -22,7 +22,13 @@ vim.lsp.config("pyright", {
 })
 
 -- Python: linting / formatting with Ruff
-vim.lsp.config("ruff", {capabilities = capabilities})
+-- Force UTF-16 position encoding so Ruff matches Pyright (which only speaks UTF-16).
+-- Without this, Neovim warns about mixed encodings on Python buffers.
+vim.lsp.config("ruff", {
+    capabilities = vim.tbl_deep_extend("force", capabilities, {
+        general = {positionEncodings = {"utf-16"}}
+    })
+})
 
 -- Rust
 vim.lsp.config("rust_analyzer", {capabilities = capabilities})
@@ -33,7 +39,7 @@ vim.lsp.enable("ruff")
 vim.lsp.enable("rust_analyzer")
 
 vim.diagnostic.config({
-    update_in_insert = true,
+    update_in_insert = false,
     virtual_text = true,
     signs = true,
     underline = true
