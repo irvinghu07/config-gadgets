@@ -8,7 +8,7 @@ Rendered to `~/.config/zellij/` by chezmoi. For bootstrap and sync workflow see 
 
 - **Zellij ≥ 0.44** — uses inline theme definitions and plugin features from recent versions
 - **A Nerd Font** (for compact-bar icons) — e.g. JetBrainsMono Nerd Font
-- **WezTerm** (or any terminal with OSC 52 support) — clipboard uses OSC 52, no OS-specific `copy_command`
+- **WezTerm** (or any terminal with OSC 52 support) — clipboard uses OSC 52, no OS-specific `copy_command`. WezTerm is configured as a [thin host](../../docs/wezterm.md) — Zellij owns all multiplexing (panes, tabs, sessions). WezTerm keybinds are stripped to avoid conflicts.
 
 ## Architecture
 
