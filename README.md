@@ -7,8 +7,9 @@ My personal dotfiles, managed with [chezmoi](https://www.chezmoi.io).
 | Tool | Status | Docs |
 |---|---|---|
 | **Neovim** | Active | [`dot_config/nvim/README.md`](dot_config/nvim/README.md) |
+| **Zellij** | Active | [`dot_config/zellij/README.md`](dot_config/zellij/README.md) |
 
-More configs (tmux, shell, terminal emulator, etc.) will land here as they mature. Each tool gets its own `dot_config/<tool>/` directory with its own `README.md`, linked from the table above.
+More configs (shell, terminal emulator, etc.) will land here as they mature. Each tool gets its own `dot_config/<tool>/` directory with its own `README.md`, linked from the table above.
 
 ## Bootstrap on a new machine
 
@@ -51,12 +52,17 @@ git push
 ├── README.md                   # this file — repo-level index
 ├── .chezmoiignore              # files chezmoi should not apply to the target
 └── dot_config/                 # rendered to ~/.config/ on apply
-    └── nvim/                   # → ~/.config/nvim/
-        ├── README.md           # nvim-specific documentation
-        ├── init.lua
-        └── lua/
-            ├── config/         # extracted plugin configs
-            └── plugins/        # plugin spec
+    ├── nvim/                   # → ~/.config/nvim/
+    │   ├── README.md           # nvim-specific documentation
+    │   ├── init.lua
+    │   └── lua/
+    │       ├── config/         # extracted plugin configs
+    │       └── plugins/        # plugin spec
+    └── zellij/                 # → ~/.config/zellij/
+        ├── README.md           # zellij-specific documentation
+        ├── config.kdl          # keybinds, theme, options
+        ├── layouts/            # dev and claude workflow layouts
+        └── plugins/            # zellij-forgot keybind cheatsheet
 ```
 
 The `dot_` prefix is chezmoi's naming convention — it renders to a leading dot at apply time (`dot_config/` → `~/.config/`). Keeps dotfiles visible in normal `ls` output and editors while still placing them correctly in the target tree.
