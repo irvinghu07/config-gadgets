@@ -47,3 +47,6 @@ keymap("n", "<leader>ft", "<cmd>TodoTelescope<cr>", {desc = "Find TODOs"})
 keymap("n", "<leader>nd", "<cmd>NoiceDismiss<cr>",
        {desc = "Dismiss notifications"})
 keymap("n", "<leader>nh", "<cmd>NoiceHistory<cr>", {desc = "Message history"})
+
+-- Focus / dim
+keymap("n", "<leader>tw", "<cmd>Twilight<cr>", {desc = "Twilight (dim scope)"})

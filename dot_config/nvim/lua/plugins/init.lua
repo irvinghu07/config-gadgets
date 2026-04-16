@@ -133,5 +133,13 @@ return {
         event = "VimEnter",
         dependencies = {"nvim-tree/nvim-web-devicons"},
         config = function() require("config.alpha") end
+    }, {
+        "echasnovski/mini.nvim",
+        event = "VeryLazy",
+        config = function() require("config.mini") end
+    }, {
+        "folke/twilight.nvim",
+        cmd = "Twilight",
+        config = function() require("config.twilight") end
     }
 }
