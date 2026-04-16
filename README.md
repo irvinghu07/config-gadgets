@@ -4,12 +4,21 @@ My personal dotfiles, managed with [chezmoi](https://www.chezmoi.io).
 
 ## What's tracked
 
-| Tool | Status | Docs |
-|---|---|---|
-| **Neovim** | Active | [`dot_config/nvim/README.md`](dot_config/nvim/README.md) |
-| **Zellij** | Active | [`dot_config/zellij/README.md`](dot_config/zellij/README.md) |
+| Tool | Location | Docs |
+|------|----------|------|
+| **Neovim** | `dot_config/nvim/` | [`README.md`](dot_config/nvim/README.md) |
+| **Zellij** | `dot_config/zellij/` | [`README.md`](dot_config/zellij/README.md) |
+| **Starship** | `dot_config/starship.toml` | — |
+| **WezTerm** | `dot_wezterm.lua` | — |
+| **Zsh** | `dot_zshrc`, `dot_zshenv`, `dot_zprofile` | — |
+| **Broot** | `dot_config/broot/` | — |
+| **Git** | `dot_config/git/` | — |
+| **Direnv** | `dot_config/direnv/` | — |
+| **htop** | `dot_config/htop/` | — |
 
-More configs (shell, terminal emulator, etc.) will land here as they mature. Each tool gets its own `dot_config/<tool>/` directory with its own `README.md`, linked from the table above.
+External (cloned via `.chezmoiexternal.toml`):
+- **oh-my-zsh** → `~/.oh-my-zsh/`
+- **zsh-autosuggestions** → `~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/`
 
 ## Bootstrap on a new machine
 
@@ -49,25 +58,26 @@ git push
 
 ```
 .
-├── README.md                   # this file — repo-level index
-├── .chezmoiignore              # files chezmoi should not apply to the target
-└── dot_config/                 # rendered to ~/.config/ on apply
-    ├── nvim/                   # → ~/.config/nvim/
-    │   ├── README.md           # nvim-specific documentation
-    │   ├── init.lua
-    │   └── lua/
-    │       ├── config/         # extracted plugin configs
-    │       └── plugins/        # plugin spec
-    └── zellij/                 # → ~/.config/zellij/
-        ├── README.md           # zellij-specific documentation
-        ├── config.kdl          # keybinds, theme, options
-        ├── layouts/            # dev and claude workflow layouts
-        └── plugins/            # zellij-forgot keybind cheatsheet
+├── README.md
+├── .chezmoiignore
+├── .chezmoiexternal.toml       # oh-my-zsh + zsh-autosuggestions
+├── dot_zshrc                   # → ~/.zshrc
+├── dot_zshenv                  # → ~/.zshenv
+├── dot_zprofile                # → ~/.zprofile
+├── dot_wezterm.lua             # → ~/.wezterm.lua
+└── dot_config/                 # → ~/.config/
+    ├── starship.toml
+    ├── nvim/
+    ├── zellij/
+    ├── broot/
+    ├── git/
+    ├── direnv/
+    └── htop/
 ```
 
-The `dot_` prefix is chezmoi's naming convention — it renders to a leading dot at apply time (`dot_config/` → `~/.config/`). Keeps dotfiles visible in normal `ls` output and editors while still placing them correctly in the target tree.
+The `dot_` prefix is chezmoi's naming convention — it renders to a leading dot at apply time (`dot_config/` → `~/.config/`).
 
-`.chezmoiignore` uses gitignore-style patterns. Every `README.md` at any depth is ignored, so tool-level docs stay in the repo but never get applied to `~/README.md` or similar.
+`.chezmoiignore` uses gitignore-style patterns. `README.md` at any depth is ignored so docs stay in the repo but never get applied to the target tree.
 
 ## License
 

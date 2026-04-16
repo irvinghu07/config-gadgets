@@ -1,0 +1,11 @@
+# Pin to specific commits. To update: replace the commit hash and run `chezmoi apply`.
+# No refreshPeriod — pinned archives don't change; update manually.
+[".oh-my-zsh"]
+type = "archive"
+url = "https://github.com/ohmyzsh/ohmyzsh/archive/061f773dd356df52a8bccd5e73377c012f97ef14.tar.gz"
+stripComponents = 1
+
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+type = "archive"
+url = "https://github.com/zsh-users/zsh-autosuggestions/archive/a411ef3e0992d4839f0732ebeb9823024afaaaa8.tar.gz"
+stripComponents = 1
