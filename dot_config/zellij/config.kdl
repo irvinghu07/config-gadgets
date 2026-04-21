@@ -291,6 +291,30 @@ themes {
         cyan "#8be9fd"
         black "#282a36"
         white "#f8f8f2"
+        text_selected {
+            base 248 248 242
+            background 68 71 90
+            emphasis_0 255 184 108
+            emphasis_1 139 233 253
+            emphasis_2 80 250 123
+            emphasis_3 255 121 198
+        }
+        table_cell_selected {
+            base 248 248 242
+            background 68 71 90
+            emphasis_0 255 184 108
+            emphasis_1 139 233 253
+            emphasis_2 80 250 123
+            emphasis_3 255 121 198
+        }
+        list_selected {
+            base 248 248 242
+            background 68 71 90
+            emphasis_0 255 184 108
+            emphasis_1 139 233 253
+            emphasis_2 80 250 123
+            emphasis_3 255 121 198
+        }
     }
 }
 theme "adventure"

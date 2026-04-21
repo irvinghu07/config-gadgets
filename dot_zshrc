@@ -72,3 +72,20 @@ export FZF_ALT_C_OPTS="--preview 'lsd --tree --depth 2 --color=always {}'"
 
 # ── Completions (keep at end) ────────────────────────────────
 [[ -f "$HOME/.openclaw/completions/openclaw.zsh" ]] && source "$HOME/.openclaw/completions/openclaw.zsh"
+
+
+# bun completions
+[ -s "/Users/ethan/.bun/_bun" ] && source "/Users/ethan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# Proxy
+export HTTP_PROXY="http://127.0.0.1:7897"
+export HTTPS_PROXY="http://127.0.0.1:7897"
+export ALL_PROXY="socks5://127.0.0.1:7897"
+export NO_PROXY="localhost,127.0.0.1,::1"

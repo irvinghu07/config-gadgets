@@ -1,0 +1,49 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Ghostty config — ported from ~/.wezterm.lua (ethan macOS 26)
+# Research bundle: ~/.config/.omc/research/ghostty/
+# ──────────────────────────────────────────────────────────────────────────────
+
+# ── Shell ─────────────────────────────────────────────────────────────────────
+# Launch fish directly. Zsh remains the macOS login shell (no chsh).
+command = /usr/local/bin/fish
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+
+# ── Font ──────────────────────────────────────────────────────────────────────
+font-family = "JetBrainsMono Nerd Font"
+font-family = "Apple Color Emoji"
+font-size = 22
+adjust-cell-height = 10%
+adjust-cell-width = -10%
+
+# ── Theme ─────────────────────────────────────────────────────────────────────
+theme = Catppuccin Mocha
+
+# ── Window ────────────────────────────────────────────────────────────────────
+background-opacity = 0.95
+background-blur = true
+window-decoration = true
+window-padding-x = 8
+window-padding-y = 6
+
+# ── Cursor ────────────────────────────────────────────────────────────────────
+cursor-style = bar
+
+# ── Scrollback ────────────────────────────────────────────────────────────────
+scrollback-limit = 10000
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+macos-titlebar-style = tabs
+macos-option-as-alt = left
+
+# ── Split / tab inheritance (1.3.0+) ──────────────────────────────────────────
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+# ── Keybinds ──────────────────────────────────────────────────────────────────
+keybind = cmd+ctrl+f=toggle_fullscreen
+keybind = cmd+equal=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+zero=reset_font_size
+keybind = cmd+shift+u=scroll_page_up
+keybind = cmd+shift+d=scroll_page_down

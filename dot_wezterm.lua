@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 local act = wezterm.action
+package.path = package.path .. ";" .. wezterm.home_dir .. "/.config/wezterm/lua/?.lua"
+local background_manager = require("background_manager")
 
 -- ── Maximize on startup ─────────────────────────────────────
 wezterm.on("gui-startup", function()
@@ -60,6 +62,8 @@ config.colors = {
   },
 }
 
+background_manager.apply(config)
+
 -- ── Scrollback ──────────────────────────────────────────────
 config.scrollback_lines = 10000
 config.enable_scroll_bar = false
@@ -108,6 +112,19 @@ config.keys = {
     }
   },
 }
+
+-- BEGIN background_manager integration
+wezterm.on("background-manager-next", function(window, pane)
+  background_manager.next(window)
+end)
+
+wezterm.on("background-manager-prev", function(window, pane)
+  background_manager.prev(window)
+end)
+
+table.insert(config.keys, { key = "]", mods = "CMD|SHIFT", action = wezterm.action.EmitEvent "background-manager-next" })
+table.insert(config.keys, { key = "[", mods = "CMD|SHIFT", action = wezterm.action.EmitEvent "background-manager-prev" })
+-- END background_manager integration
 
 -- ── Mouse ───────────────────────────────────────────────────
 config.mouse_bindings = {

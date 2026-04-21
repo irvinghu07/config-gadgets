@@ -10,7 +10,9 @@ My personal dotfiles, managed with [chezmoi](https://www.chezmoi.io).
 | **Zellij** | `dot_config/zellij/` | [`README.md`](dot_config/zellij/README.md) |
 | **Starship** | `dot_config/starship.toml` | [`docs/starship.md`](docs/starship.md) |
 | **WezTerm** | `dot_wezterm.lua` | [`docs/wezterm.md`](docs/wezterm.md) |
+| **Ghostty** | `dot_config/ghostty/` | — |
 | **Zsh** | `dot_zshrc`, `dot_zshenv`, `dot_zprofile` | [`docs/zsh.md`](docs/zsh.md) |
+| **Fish** | `dot_config/fish/` | — |
 | **Broot** | `dot_config/broot/` | — |
 | **Git** | `dot_config/git/` | — |
 | **Direnv** | `dot_config/direnv/` | — |
@@ -101,6 +103,8 @@ oh-my-zsh and zsh-autosuggestions are pinned to specific commit archives in `.ch
     ├── starship.toml
     ├── nvim/                   # includes lazy-lock.json for plugin pinning
     ├── zellij/
+    ├── ghostty/
+    ├── fish/
     ├── broot/
     ├── git/
     ├── direnv/

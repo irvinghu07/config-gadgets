@@ -1,3 +1,15 @@
 README.md
 **/.DS_Store
 .config/broot/launcher
+
+# Fish runtime state (not replicated)
+.config/fish/fish_variables
+.config/fish/fish_history
+
+# Fish cache (auto-generated)
+.local/share/fish/**
+
+# Ghostty macOS application state / cache
+.config/ghostty/macos-resources/**
+Library/Caches/com.mitchellh.ghostty/**
+Library/Application Support/com.mitchellh.ghostty/**
